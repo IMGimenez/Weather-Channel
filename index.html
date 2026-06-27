@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Channel</title>
+
+    <link rel="stylesheet" href="/src/style.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <!-- ICONO -->
+    <link rel="icon" href="https://openweathermap.org/img/wn/01d.png" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="hero">
+      <div class="hero-content">
+        <div>
+          <h1>🌤 Weather Channel</h1>
+          <p>Consulta el clima en tiempo real de ciudades de todo el mundo.</p>
+        </div>
+        <button id="themeToggle" class="theme-btn">🌙</button>
+      </div>
+    </header>
+
+    <!-- CONTROLES -->
+    <section class="controls-card">
+      <div class="search-row">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="text" placeholder="Buscar ciudad..." />
+        </div>
+        <button id="searchBtn">Buscar</button>
+      </div>
+
+      <div class="filters-row">
+        <select id="countryFilter">
+          <option value="">Todos los países</option>
+        </select>
+        <select id="sortSelect">
+          <option value="">Ordenar</option>
+          <option value="name-asc">Nombre A-Z</option>
+          <option value="name-desc">Nombre Z-A</option>
+          <option value="temp-desc">Temperatura ↓</option>
+          <option value="temp-asc">Temperatura ↑</option>
+        </select>
+
+        <button id="clearBtn">Limpiar</button>
+      </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="stats">
+      <div class="stat-card">
+        <h3 id="citiesCount">0</h3>
+        <p>Ciudades</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="favoritesCount">0</h3>
+        <p>Favoritos</p>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navigation">
+      <a href="favorites.html" class="favorites-link">
+        <i class="fa-solid fa-heart"></i> Ver Favoritos
+      </a>
+    </nav>
+
+    <!-- MENSAJES -->
+    <section id="messageContainer"></section>
+
+    <!-- LOADER -->
+    <section id="loaderContainer" class="hidden">
+      <div class="loader"></div>
+      <p>Cargando información...</p>
+    </section>
+
+    <!-- RESULTADOS -->
+    <main>
+      <section id="weatherContainer" class="cards-container">
+        <!-- Cards generadas dinámicamente -->
+      </section>
+      <button id="loadMoreBtn" class="load-more-btn">Cargar más</button>
+    </main>
+
+    <!-- MODAL DETALLE -->
+    <div id="weatherModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close-btn"> &times; </span>
+        <div id="modalBody"><!-- Contenido dinámico --></div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Weather Channel - TP API OpenWeatherMap</p>
+      <p>Desarrollado con HTML - CSS - JavaScript</p>
+    </footer>
+
+    <script type="module" src="/src/js/app.js"></script>
+  </body>
+</html>

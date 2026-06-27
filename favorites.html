@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Favoritos | Weather Explorer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- ICONO -->
+    <link rel="icon" href="https://openweathermap.org/img/wn/01d.png" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1>
+          <i class="fa-solid fa-heart"></i>
+          Mis Ciudades Favoritas
+        </h1>
+
+        <p>Gestiona y consulta rápidamente tus ciudades guardadas.</p>
+      </div>
+    </header>
+
+    <!-- ACCIONES -->
+    <section class="controls-card">
+      <div class="search-row">
+        <button id="refreshFavoritesBtn">
+          <i class="fa-solid fa-rotate"></i>
+          Actualizar clima
+        </button>
+        <button id="clearFavoritesBtn" class="danger-btn">
+          <i class="fa-solid fa-trash"></i>
+          Eliminar todos
+        </button>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navigation">
+      <a href="/index.html" class="back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver al buscador
+      </a>
+    </nav>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="stats">
+      <div class="stat-card">
+        <h3 id="favoritesCount">0</h3>
+
+        <p>Favoritos guardados</p>
+      </div>
+    </section>
+
+    <!-- MENSAJES -->
+    <section id="messageContainer"></section>
+
+    <!-- LOADER -->
+    <section id="loaderContainer" class="hidden">
+      <div class="loader"></div>
+      <p>Cargando favoritos...</p>
+    </section>
+
+    <!-- FAVORITOS -->
+    <main>
+      <section id="favoritesContainer" class="cards-container">
+        <!-- Cards generadas dinámicamente -->
+      </section>
+
+      <!-- VACÍO -->
+      <section id="emptyState" class="empty-state hidden">
+        <i class="fa-regular fa-heart"></i>
+
+        <h2>No tienes favoritos guardados</h2>
+
+        <p>Busca ciudades en la página principal y agrégalas a favoritos.</p>
+
+        <a href="/index.html" class="go-search-btn"> Buscar ciudades </a>
+      </section>
+    </main>
+
+    <!-- MODAL DETALLE -->
+    <div id="weatherModal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close-btn"> &times; </span>
+
+        <div id="modalBody">
+          <!-- Contenido dinámico -->
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Weather Explorer - Favoritos</p>
+      <p>Desarrollado con HTML - CSS - JavaScript</p>
+    </footer>
+
+    <!-- JS -->
+    <script type="module" src="/src/js/favorites.js"></script>
+  </body>
+</html>
